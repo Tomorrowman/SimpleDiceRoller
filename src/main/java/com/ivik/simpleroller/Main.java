@@ -1,6 +1,8 @@
 package com.ivik.simpleroller;
 
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -34,13 +36,27 @@ public class Main extends Application {
 
         Label rollLabel = new Label("Enter roll (ex. 1d20): ");
         grid.add(rollLabel, 0, 0);
-        TextField rollField = new TextField();
+        final TextField rollField = new TextField();
         grid.add(rollField, 1, 0);
         Button btn = new Button("Roll!");
         grid.add(btn, 2, 0);
-        TextArea results = new TextArea();
+        final TextArea results = new TextArea();
         grid.add(results, 0, 1, 3, 1);
 
+        btn.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent){
+
+                String input = rollField.getText();
+                Calculate calc1 = new Calculate();
+                StringBuilder output = calc1.calculate(input);
+                results.setText(String.valueOf(output));
+
+            }
+
+            });
         stage.show();
-    }
+        }
+
+
 }
