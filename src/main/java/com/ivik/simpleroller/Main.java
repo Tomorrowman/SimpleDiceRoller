@@ -11,6 +11,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Priority;
 import javafx.stage.Stage;
 
 /**
@@ -42,6 +43,10 @@ public class Main extends Application {
         grid.add(btn, 2, 0);
         final TextArea results = new TextArea();
         grid.add(results, 0, 1, 3, 1);
+
+        //ensures that the textfield resizes with the window
+        grid.setHgrow(btn, Priority.ALWAYS);
+        grid.setVgrow(results, Priority.ALWAYS);
 
         btn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
