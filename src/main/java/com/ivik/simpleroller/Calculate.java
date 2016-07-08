@@ -4,7 +4,7 @@ import java.util.Random;
 import java.util.regex.Pattern;
 
 /**
- * Created by Eigenaar on 9-4-2016.
+ * Created by Tomorrowman on 9-4-2016.
  */
 public class Calculate {
 
@@ -21,9 +21,9 @@ public class Calculate {
 
         boolean b = Pattern.matches("\\d*[d]\\d*", input);
 
-        if (b == false){
+        if (!b){
             return rejectedInput;
-        }else if (b == true){
+        }else if (b){
             checkedInput = input;
         }
 
