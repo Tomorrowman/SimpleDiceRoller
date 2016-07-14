@@ -44,10 +44,17 @@ public class Main extends Application {
         final TextArea results = new TextArea();
         grid.add(results, 0, 1, 3, 1);
 
+        //test buttons for increased functionality
+        Button btn2 = new Button("Test");
+        grid.add(btn2, 0, 3);
+        Button btn3 = new Button("Test 2");
+        grid.add(btn3, 1, 3);
+
         //ensures that the textfield resizes with the window
         grid.setHgrow(btn, Priority.ALWAYS);
         grid.setVgrow(results, Priority.ALWAYS);
 
+        //stuff the buttons do
         btn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent){
