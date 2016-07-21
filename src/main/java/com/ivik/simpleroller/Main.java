@@ -35,7 +35,7 @@ public class Main extends Application {
         Scene scene = new Scene(grid);
         stage.setScene(scene);
 
-        Label rollLabel = new Label("Enter roll (ex. 1d20): ");
+        Label rollLabel = new Label("Enter roll (ex. 1d20+1): ");
         grid.add(rollLabel, 0, 0);
         final TextField rollField = new TextField();
         grid.add(rollField, 1, 0);
@@ -45,7 +45,7 @@ public class Main extends Application {
         grid.add(results, 0, 1, 3, 1);
 
         //test buttons for increased functionality
-        Button btn2 = new Button("Test");
+        Button btn2 = new Button("Clear Field");
         grid.add(btn2, 0, 3);
         Button btn3 = new Button("Test 2");
         grid.add(btn3, 1, 3);
@@ -62,8 +62,17 @@ public class Main extends Application {
                 String input = rollField.getText();
                 Calculate calc1 = new Calculate();
                 StringBuilder output = calc1.calculate(input);
-                results.setText(String.valueOf(output));
+                String previousOutput = results.getText();
+                results.setText(previousOutput + String.valueOf(output));
 
+            }
+
+            });
+        btn2.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+
+                results.clear();
             }
 
             });
