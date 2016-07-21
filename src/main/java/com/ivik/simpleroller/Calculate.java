@@ -41,8 +41,6 @@ public class Calculate {
             NegMod = Integer.parseInt(diceFacesMods[2]);
         }
 
-        System.out.println(PosMod);
-
 
         for (int i = 0; i < dice; i++) {
             roll = diceRoller.nextInt(faces) + 1;
