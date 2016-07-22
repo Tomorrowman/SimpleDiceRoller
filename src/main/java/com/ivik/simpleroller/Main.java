@@ -35,20 +35,19 @@ public class Main extends Application {
         Scene scene = new Scene(grid);
         stage.setScene(scene);
 
+        //text stuff
         Label rollLabel = new Label("Enter roll (ex. 1d20+1): ");
         grid.add(rollLabel, 0, 0);
         final TextField rollField = new TextField();
         grid.add(rollField, 1, 0);
-        Button btn = new Button("Roll!");
-        grid.add(btn, 2, 0);
         final TextArea results = new TextArea();
         grid.add(results, 0, 1, 3, 1);
 
-        //test buttons for increased functionality
+        //buttons
+        Button btn = new Button("Roll!");
+        grid.add(btn, 2, 0);
         Button btn2 = new Button("Clear Field");
         grid.add(btn2, 0, 3);
-        Button btn3 = new Button("Test 2");
-        grid.add(btn3, 1, 3);
 
         //ensures that the textfield resizes with the window
         grid.setHgrow(btn, Priority.ALWAYS);

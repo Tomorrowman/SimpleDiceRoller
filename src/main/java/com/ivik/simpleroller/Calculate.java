@@ -19,7 +19,7 @@ public class Calculate {
         int nat20 = 0;
         int nat1 = 0;
         String checkedInput = "";
-        StringBuilder rejectedInput = new StringBuilder("Invalid input");
+        StringBuilder rejectedInput = new StringBuilder("Invalid input\n");
         StringBuilder output = new StringBuilder();
 
         boolean b = Pattern.matches("\\d*[d]\\d*|\\d*[d]\\d*[+-]\\d*", input);
@@ -62,7 +62,7 @@ public class Calculate {
 
         }
         avrg = sum / dice;
-        output.append ("Average is   : " + avrg + "\n" + "Max values   : " + nat20 + "\n" + "Natural 1's  : " + nat1 + "\n");
+        output.append ("Average is   : " + avrg + "\n" + "Max values  : " + nat20 + "\n" + "Natural 1's  : " + nat1 + "\n");
         return output;
     }
 
